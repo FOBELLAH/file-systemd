@@ -1,0 +1,18 @@
+[Unit]
+Description= A SERVICE TO START NODEJS APP
+
+
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/fobella
+ExecStart=/bin/npm run start:dev
+Restart=on-failure
+RestartSec=3seconds
+StandardOutput=syslog
+StandardError=syslog      
+SyslogIdentifier=Fobella  
+
+[Install]
+WantedBy=multi-user.target
